@@ -1,64 +1,72 @@
-Wikipedia Question Answering (RAG)
+📚 Wikipedia Question Answering System
 
-A lightweight Retrieval-Augmented Generation (RAG) pipeline that answers user questions using Wikipedia content, semantic search, and Transformer-based question answering.
+A retrieval-augmented question answering (RAG) system that uses Wikipedia as a knowledge source, semantic vector search for retrieval, and Transformer-based models for answer extraction.
 
-Overview
+🧩 Description
 
-This project retrieves relevant information from Wikipedia, performs vector similarity search using FAISS, and extracts precise answers using a pre-trained Transformer QA model.
+This project implements an end-to-end pipeline that retrieves relevant Wikipedia passages using dense embeddings and FAISS, then extracts accurate answers using a pre-trained question-answering model.
 
-Tech Stack
+⚙️ Core Components
 
-Python 3.9+
+📄 Document Ingestion: Wikipedia content retrieval
 
-Wikipedia API
+🧠 Embedding Layer: Sentence Transformers
 
-Sentence Transformers (Embeddings)
+🔍 Vector Store: FAISS for similarity search
 
-FAISS (Vector Search)
+🤖 Inference Layer: Hugging Face Transformer QA model
 
-Hugging Face Transformers
+🛠️ Technology Stack
 
-PyTorch, NumPy
+🐍 Python
 
-Installation
-pip install wikipedia
-pip install faiss-cpu
-pip install transformers sentence-transformers torch numpy
+🌐 Wikipedia API
+
+🧬 Sentence-Transformers
+
+⚡ FAISS (CPU)
+
+🤗 Hugging Face Transformers
+
+🔥 PyTorch, NumPy
+
+🚀 Setup
+pip install wikipedia faiss-cpu transformers sentence-transformers torch numpy
 
 
-Restart the kernel/runtime after installation.
+🔄 Restart the runtime after installing dependencies.
 
-Usage
-question = "What is machine learning?"
-answer = qa_pipeline(question)
-print(answer)
+▶️ Example Usage
+query = "What is machine learning?"
+response = qa_pipeline(query)
+print(response)
 
-Architecture
+🔄 System Flow
 
-Load Wikipedia documents
+📥 Fetch and preprocess Wikipedia documents
 
-Chunk text into passages
+✂️ Split text into manageable chunks
 
-Generate embeddings
+🧠 Generate vector embeddings
 
-Retrieve top-K relevant chunks using FAISS
+🔎 Retrieve top-matching passages via FAISS
 
-Extract answer using a QA model
+✅ Extract answers using a QA model
 
-Notes
+📌 Design Notes
 
-FAISS runs in CPU mode by default
+Clean, modular, and easy to extend
 
-Triton warnings can be safely ignored
+Runs fully on CPU by default
 
-Designed for clarity and learning; production setups may require optimization
+⚠️ Triton-related warnings do not impact functionality
 
-Future Enhancements
+🗺️ Roadmap
 
-Improved document loaders
+➕ Multiple data source support
 
-GPU-based FAISS indexing
+🚀 GPU-accelerated indexing
 
-Support for multiple knowledge sources
+🧭 Advanced retrieval strategies (HNSW, IVF)
 
-LLM-based answer generation
+✨ LLM-based generative answering
